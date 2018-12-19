@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { View, StyleSheet } from 'react-native';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+
+import Home from './Home'
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <View>
+        <Router>
+          {/* <Home></Home> */}
+          <Route path="/" component={Home}></Route>
+          
+          {/* <Page></Page> */}
+        </Router>
+      </View>
     );
   }
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 20,
+    color: 'hsl(0,0%,20%)'
+  },
+  button: {
+    backgroundColor: '#e1e1e1',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 15,
+  }
+});
